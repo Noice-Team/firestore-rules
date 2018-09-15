@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/${PROJECT_ID}/firebase'
-  args: [ 'deploy', '--only', 'firestore:rules']
+  args: [ 'deploy', '--project', '${PROJECT_ID}', '--token', '$$FIREBASE_TOKEN', '--only', 'firestore:rules']
   secretEnv: ['FIREBASE_TOKEN']
   
 secrets:
