@@ -11,9 +11,9 @@ service cloud.firestore {
       allow create: if !exists(/databases/$(database)/documents/Users/$(request.auth.uid));
       allow update: if request.auth.uid == userId || isAdmin();
     }
-    match /Lobbies/{army}{
-    	allow read: if true;
-      allow create: if isSignedIn();
+    match /Lobbies/{lobby}{
+		allow read;
+		allow create: if isSignedIn();
     }
     
     
